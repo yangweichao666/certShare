@@ -246,7 +246,7 @@ public class CertShareApiServiceImpl implements CertShareApiService {
                                     tempDownloadUrlExpireTime.setCreateTime(createTime);
                                     tempDownloadUrlExpireTime.setExpiredTime(this.timeCalculateUtil.getExpiredTime(createTime));
                                     TempDownloadUrlExpireTime save = this.tempDownloadUrlExpireTimeService.save(tempDownloadUrlExpireTime);
-                                    String tempFileId = save.getTempFileId();
+                                    tempFileId  = save.getTempFileId();
                                     String contentUrl = (this.isPrefix.equals("1") ? UrlPrefixUtil.getUrlPrefix(request) : "") + request.getContextPath() + "/zzgxpt/download?id=" + tempFileId;
                                     downloadUrlDataRes.setContentType(request.getScheme());
                                     downloadUrlDataRes.setContent("http://172.20.8.2:28080" + contentUrl);
@@ -1182,7 +1182,7 @@ public class CertShareApiServiceImpl implements CertShareApiService {
                     }
 
                     String dzzzKey = (String)next.getKey();
-                    String[] split = dzzzKey.split("_");
+                    split = dzzzKey.split("_");
                     String getMethodName = "get";
 
                     for(int i = 0; i < split.length; ++i) {
@@ -1491,7 +1491,9 @@ public class CertShareApiServiceImpl implements CertShareApiService {
             }
 
             List<NewAddCol> newAddColList = license.getNewAddCol();
-            newAddColList.forEach((newAddCol) -> {
+            for (int i = 0; i < newAddColList.size(); i++) {
+                NewAddCol newAddCol =newAddColList.get(i);
+
                 fieldConvertList.forEach((fieldConvert) -> {
                     if (newAddCol.gettKey().equals(fieldConvert.getDzzzField())) {
                         fieldConvert.setDzzzField("NewAddCol." + newAddCol.gettKey());
@@ -1500,7 +1502,9 @@ public class CertShareApiServiceImpl implements CertShareApiService {
                     }
 
                 });
-            });
+            }
+
+
         }
 
         return fieldConvertList.size() == 0;
@@ -1590,7 +1594,7 @@ public class CertShareApiServiceImpl implements CertShareApiService {
     private Map readConfig2Map(String readConfig) {
         Gson gson = (new GsonBuilder()).disableHtmlEscaping().create();
         Map retMap = Maps.newHashMap();
-        Map retMap = (Map)gson.fromJson(readConfig, Map.class);
+        retMap = (Map)gson.fromJson(readConfig, Map.class);
         return retMap;
     }
 }

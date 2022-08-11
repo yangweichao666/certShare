@@ -322,10 +322,10 @@ public class QueryDataInfoRes {
     }
 
     public int hashCode() {
-        int PRIME = true;
+         
         int result = 1;
         Object $certificateType = this.getCertificateType();
-        int result = result * 59 + ($certificateType == null ? 43 : $certificateType.hashCode());
+        result = result * 59 + ($certificateType == null ? 43 : $certificateType.hashCode());
         Object $certificateName = this.getCertificateName();
         result = result * 59 + ($certificateName == null ? 43 : $certificateName.hashCode());
         Object $certificateHolder = this.getCertificateHolder();

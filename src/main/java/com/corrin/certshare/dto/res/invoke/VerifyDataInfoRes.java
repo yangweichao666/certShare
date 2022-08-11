@@ -68,10 +68,10 @@ public class VerifyDataInfoRes {
     }
 
     public int hashCode() {
-        int PRIME = true;
+
         int result = 1;
         Object $result = this.getResult();
-        int result = result * 59 + ($result == null ? 43 : $result.hashCode());
+        result = result * 59 + ($result == null ? 43 : $result.hashCode());
         Object $message = this.getMessage();
         result = result * 59 + ($message == null ? 43 : $message.hashCode());
         return result;

@@ -91,10 +91,10 @@ public class DownloadUrlDataRes {
     }
 
     public int hashCode() {
-        int PRIME = true;
+         
         int result = 1;
         Object $contentType = this.getContentType();
-        int result = result * 59 + ($contentType == null ? 43 : $contentType.hashCode());
+        result = result * 59 + ($contentType == null ? 43 : $contentType.hashCode());
         Object $certIdentifier = this.getCertIdentifier();
         result = result * 59 + ($certIdentifier == null ? 43 : $certIdentifier.hashCode());
         Object $content = this.getContent();

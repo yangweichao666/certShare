@@ -70,10 +70,10 @@ public class QueryDataRecordListRes {
     }
 
     public int hashCode() {
-        int PRIME = true;
+         
         int result = 1;
         Object $group = this.getGroup();
-        int result = result * 59 + ($group == null ? 43 : $group.hashCode());
+        result = result * 59 + ($group == null ? 43 : $group.hashCode());
         Object $datalist = this.getDatalist();
         result = result * 59 + ($datalist == null ? 43 : $datalist.hashCode());
         return result;

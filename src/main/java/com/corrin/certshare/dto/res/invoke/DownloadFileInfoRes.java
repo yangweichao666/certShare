@@ -152,10 +152,10 @@ public class DownloadFileInfoRes {
     }
 
     public int hashCode() {
-        int PRIME = true;
+         
         int result = 1;
         Object $certificateType = this.getCertificateType();
-        int result = result * 59 + ($certificateType == null ? 43 : $certificateType.hashCode());
+        result = result * 59 + ($certificateType == null ? 43 : $certificateType.hashCode());
         Object $issueDept = this.getIssueDept();
         result = result * 59 + ($issueDept == null ? 43 : $issueDept.hashCode());
         Object $certificateNumber = this.getCertificateNumber();

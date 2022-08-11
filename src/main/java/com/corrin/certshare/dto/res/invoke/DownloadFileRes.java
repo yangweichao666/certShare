@@ -92,10 +92,10 @@ public class DownloadFileRes implements Serializable {
     }
 
     public int hashCode() {
-        int PRIME = true;
+         
         int result = 1;
         Object $head = this.getHead();
-        int result = result * 59 + ($head == null ? 43 : $head.hashCode());
+        result = result * 59 + ($head == null ? 43 : $head.hashCode());
         Object $data = this.getData();
         result = result * 59 + ($data == null ? 43 : $data.hashCode());
         return result;

@@ -110,10 +110,10 @@ public class QueryDataSurfaceInfoRes {
     }
 
     public int hashCode() {
-        int PRIME = true;
+         
         int result = 1;
         Object $name = this.getName();
-        int result = result * 59 + ($name == null ? 43 : $name.hashCode());
+        result = result * 59 + ($name == null ? 43 : $name.hashCode());
         Object $value = this.getValue();
         result = result * 59 + ($value == null ? 43 : $value.hashCode());
         Object $valueType = this.getValueType();

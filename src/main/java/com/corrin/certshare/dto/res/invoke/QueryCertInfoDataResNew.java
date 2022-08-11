@@ -68,10 +68,10 @@ public class QueryCertInfoDataResNew {
     }
 
     public int hashCode() {
-        int PRIME = true;
+         
         int result = 1;
         Object $cert_identifier = this.getCert_identifier();
-        int result = result * 59 + ($cert_identifier == null ? 43 : $cert_identifier.hashCode());
+        result = result * 59 + ($cert_identifier == null ? 43 : $cert_identifier.hashCode());
         Object $certData = this.getCertData();
         result = result * 59 + ($certData == null ? 43 : $certData.hashCode());
         return result;

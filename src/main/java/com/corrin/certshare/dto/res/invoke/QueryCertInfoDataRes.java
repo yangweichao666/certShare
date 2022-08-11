@@ -49,10 +49,10 @@ public class QueryCertInfoDataRes {
     }
 
     public int hashCode() {
-        int PRIME = true;
+         
         int result = 1;
         Object $certData = this.getCertData();
-        int result = result * 59 + ($certData == null ? 43 : $certData.hashCode());
+        result = result * 59 + ($certData == null ? 43 : $certData.hashCode());
         return result;
     }
 
