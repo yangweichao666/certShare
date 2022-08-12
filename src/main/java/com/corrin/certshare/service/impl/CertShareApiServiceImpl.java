@@ -537,6 +537,7 @@ public class CertShareApiServiceImpl implements CertShareApiService {
                     Map<String, String> map = new HashMap();
                     if (this.updateFieldConvert(license)) {
                         map = this.dzzzMap2ProvinceMap(license, 1, (Map)null);
+                        logger.info("------返回结果拼接:"+map.toString());
                     }
 
                     if (this.certIdentifier.equals("1")) {
@@ -1474,6 +1475,7 @@ public class CertShareApiServiceImpl implements CertShareApiService {
 //        } else if (this.mapLicenseTypeCodes != null && this.mapLicenseTypeCodes.containsKey(license.getLicence_Type_Code()) && fieldConvertList == null) {
 //            fieldConvertList = this.iFieldConvertService.findByLicenseTypeCodeIsAutoAdjust0(license.getLicence_Type_Code());
 //        }
+        logger.info("---------条件查询fieldConvertList"+ fieldConvertList.toString());
 
         if (fieldConvertList.size() > 0) {
             Method[] declaredMethods = license.getClass().getSuperclass().getDeclaredMethods();
