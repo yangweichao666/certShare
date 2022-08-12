@@ -1513,7 +1513,7 @@ public class CertShareApiServiceImpl implements CertShareApiService {
     }
 
     public Map dzzzMap2ProvinceMap(License license, Integer flag, Map<String, String> provinceMap) {
-
+        logger.info("flag:"+flag+"----请求参数license："+license.toString()+"----------------provinceMap" +provinceMap.toString());
         Map retMap = new HashMap();
 //        List<FieldConvert> fieldConvertList = null;
 //        if (this.mapCatalogIds != null && this.mapCatalogIds.containsKey(license.getCatalogId())) {
