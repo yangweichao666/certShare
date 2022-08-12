@@ -1466,14 +1466,14 @@ public class CertShareApiServiceImpl implements CertShareApiService {
     }
 
     public boolean updateFieldConvert(License license) {
-        this.mapCatalogIds = this.readConfig2Map(this.byCatalogIds);
-        this.mapLicenseTypeCodes = this.readConfig2Map(this.byLicenseTypeCodes);
-        List<FieldConvert> fieldConvertList = null;
-        if (this.mapCatalogIds != null && this.mapCatalogIds.containsKey(license.getCatalogId())) {
-            fieldConvertList = this.iFieldConvertService.findByCatalogIdIsAutoAdjust0(license.getCatalogId());
-        } else if (this.mapLicenseTypeCodes != null && this.mapLicenseTypeCodes.containsKey(license.getLicence_Type_Code()) && fieldConvertList == null) {
-            fieldConvertList = this.iFieldConvertService.findByLicenseTypeCodeIsAutoAdjust0(license.getLicence_Type_Code());
-        }
+//        this.mapCatalogIds = this.readConfig2Map(this.byCatalogIds);
+//        this.mapLicenseTypeCodes = this.readConfig2Map(this.byLicenseTypeCodes);
+//        List<FieldConvert> fieldConvertList = null;
+//        if (this.mapCatalogIds != null && this.mapCatalogIds.containsKey(license.getCatalogId())) {
+        List<FieldConvert>  fieldConvertList = this.iFieldConvertService.findByCatalogIdIsAutoAdjust0(license.getCatalogId());
+//        } else if (this.mapLicenseTypeCodes != null && this.mapLicenseTypeCodes.containsKey(license.getLicence_Type_Code()) && fieldConvertList == null) {
+//            fieldConvertList = this.iFieldConvertService.findByLicenseTypeCodeIsAutoAdjust0(license.getLicence_Type_Code());
+//        }
 
         if (fieldConvertList.size() > 0) {
             Method[] declaredMethods = license.getClass().getSuperclass().getDeclaredMethods();
@@ -1512,12 +1512,12 @@ public class CertShareApiServiceImpl implements CertShareApiService {
 
     public Map dzzzMap2ProvinceMap(License license, Integer flag, Map<String, String> provinceMap) {
         Map retMap = new HashMap();
-        List<FieldConvert> fieldConvertList = null;
-        if (this.mapCatalogIds != null && this.mapCatalogIds.containsKey(license.getCatalogId())) {
-            fieldConvertList = this.iFieldConvertService.findByCatalogId(license.getCatalogId());
-        } else if (this.mapLicenseTypeCodes != null && this.mapLicenseTypeCodes.containsKey(license.getLicence_Type_Code()) && fieldConvertList == null) {
-            fieldConvertList = this.iFieldConvertService.findByLicenseTypeCode(license.getLicence_Type_Code());
-        }
+//        List<FieldConvert> fieldConvertList = null;
+//        if (this.mapCatalogIds != null && this.mapCatalogIds.containsKey(license.getCatalogId())) {
+            List<FieldConvert> fieldConvertList = this.iFieldConvertService.findByCatalogId(license.getCatalogId());
+//        } else if (this.mapLicenseTypeCodes != null && this.mapLicenseTypeCodes.containsKey(license.getLicence_Type_Code()) && fieldConvertList == null) {
+//            fieldConvertList = this.iFieldConvertService.findByLicenseTypeCode(license.getLicence_Type_Code());
+//        }
 
         if (fieldConvertList.size() > 0) {
             Class<? extends License> licenseClass = license.getClass();
