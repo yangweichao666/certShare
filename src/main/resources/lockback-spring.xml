@@ -16,6 +16,28 @@
             <pattern>${LOG_PATTERN}</pattern>
         </encoder>
     </appender>
+    <!-- 报错输出日志 -->
+    <appender name="ERROR_FILE" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- 日志级别过滤ERROR以下 -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <encoder>
+            <!-- 按照上面配置的LOG_PATTERN来打印日志 -->
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    <!-- 错误输出日志 -->
+    <appender name="WARN_FILE" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- 日志级别过滤WARN以下 -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>
+        </filter>
+        <encoder>
+            <!-- 按照上面配置的LOG_PATTERN来打印日志 -->
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
 
     <!--每天生成一个日志文件，保存30天的日志文件。rollingFile用来切分文件的 -->
     <appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -40,8 +62,8 @@
     <root level="INFO">
     <appender-ref ref="console" />
     <appender-ref ref="rollingFile" />
-    <appender-ref ref="DEBUG_FILE" />
-    <appender-ref ref="INFO_FILE" />
+<!--    <appender-ref ref="DEBUG_FILE" />-->
+<!--    <appender-ref ref="INFO_FILE" />-->
     <appender-ref ref="WARN_FILE" />
     <appender-ref ref="ERROR_FILE" />
     </root>
