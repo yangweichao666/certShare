@@ -36,6 +36,7 @@ com\corrin\certshare\dto\res\ResponseHead.class
 com\corrin\certshare\dto\req\VerifyFileQuery.class
 com\corrin\certshare\annotation\LogsProvinceApi.class
 com\corrin\certshare\dto\res\invoke\DownloadUrlDataRes.class
+com\corrin\certshare\utils\SM2Util.class
 com\corrin\certshare\dto\res\invoke\CertRemarkRes.class
 com\corrin\certshare\utils\Cipher.class
 com\corrin\certshare\utils\MD5Util.class

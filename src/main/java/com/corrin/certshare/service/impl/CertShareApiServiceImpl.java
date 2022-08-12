@@ -1513,6 +1513,7 @@ public class CertShareApiServiceImpl implements CertShareApiService {
     }
 
     public Map dzzzMap2ProvinceMap(License license, Integer flag, Map<String, String> provinceMap) {
+
         Map retMap = new HashMap();
 //        List<FieldConvert> fieldConvertList = null;
 //        if (this.mapCatalogIds != null && this.mapCatalogIds.containsKey(license.getCatalogId())) {
@@ -1520,6 +1521,7 @@ public class CertShareApiServiceImpl implements CertShareApiService {
 //        } else if (this.mapLicenseTypeCodes != null && this.mapLicenseTypeCodes.containsKey(license.getLicence_Type_Code()) && fieldConvertList == null) {
 //            fieldConvertList = this.iFieldConvertService.findByLicenseTypeCode(license.getLicence_Type_Code());
 //        }
+         logger.info("返回结果fieldConvertList："+fieldConvertList);
 
         if (fieldConvertList.size() > 0) {
             Class<? extends License> licenseClass = license.getClass();

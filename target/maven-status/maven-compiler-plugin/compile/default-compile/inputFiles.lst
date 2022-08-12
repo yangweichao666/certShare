@@ -59,6 +59,7 @@ D:\Work2022\CertShare\src\main\java\com\corrin\certshare\dao\ICertNameUserReposi
 D:\Work2022\CertShare\src\main\java\com\corrin\certshare\dto\res\invoke\VerifyDataInfoRes.java
 D:\Work2022\CertShare\src\main\java\com\corrin\certshare\annotation\LogsProvinceApi.java
 D:\Work2022\CertShare\src\main\java\com\corrin\certshare\dto\res\invoke\DownloadFileDataRes.java
+D:\Work2022\CertShare\src\main\java\com\corrin\certshare\utils\SM2Util.java
 D:\Work2022\CertShare\src\main\java\com\corrin\certshare\utils\UrlPrefixUtil.java
 D:\Work2022\CertShare\src\main\java\com\corrin\certshare\dto\res\ResCertDataData.java
 D:\Work2022\CertShare\src\main\java\com\corrin\certshare\entity\FieldConvert.java
