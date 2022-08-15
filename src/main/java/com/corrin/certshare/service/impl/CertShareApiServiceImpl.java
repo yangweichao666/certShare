@@ -436,7 +436,7 @@ public class CertShareApiServiceImpl implements CertShareApiService {
         DownloadUrlRes downloadUrlRes = new DownloadUrlRes();
         ResponseHead responseHead = null;
         DownloadUrlDataRes downloadUrlDataRes = new DownloadUrlDataRes();
-        System.out.println("downloadUrl==========");
+        logger.info("downloadUrl==========request" +request);
         if (!this.verifyUserToken(data.getAccessId(), data.getAccessToken())) {
             return this.returnParams(downloadUrlRes.getClass(), 11, "身份验证不通过", downloadUrlDataRes);
         } else if (StringUtils.isEmpty(downLoadUrlData.getCertIdentifier())) {
@@ -482,7 +482,7 @@ public class CertShareApiServiceImpl implements CertShareApiService {
                     tempDownloadUrlExpireTime.setExpiredTime(this.timeCalculateUtil.getExpiredTime(createTime));
                     TempDownloadUrlExpireTime save = this.tempDownloadUrlExpireTimeService.save(tempDownloadUrlExpireTime);
                     String tempFileId = save.getTempFileId();
-                    System.out.println("**&&&^^^$$$$$==========");
+                    logger.info("**&&&^^^$$$$$==========");
                     String contentUrl = (this.isPrefix.equals("1") ? UrlPrefixUtil.getUrlPrefix(request) : "") + request.getContextPath() + "/zzgxpt/download?id=" + tempFileId;
                     downloadUrlDataRes.setContentType(request.getScheme());
                     downloadUrlDataRes.setContent("http://172.20.8.2:28080" + contentUrl);
@@ -494,7 +494,10 @@ public class CertShareApiServiceImpl implements CertShareApiService {
 
                     this.generateWaterMarkerFile(tempDownloadUrlExpireTime.getFileId(), tempFileId, downLoadUrlData.getUseCause());
                     downloadUrlRes.setHead(responseHead);
+
+                    logger.info("downloadUrl==========downloadUrlDataRes:"+downloadUrlDataRes);
                     downloadUrlRes.setData(this.encrypt(request, downloadUrlDataRes));
+
                     return downloadUrlRes;
                 }
             } else {
