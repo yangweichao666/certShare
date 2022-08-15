@@ -1467,6 +1467,8 @@ public class CertShareApiServiceImpl implements CertShareApiService {
     }
 
     public boolean updateFieldConvert(License license) {
+        logger.info("-------byCatalogIds---:"+this.byCatalogIds);
+        logger.info("-------byLicenseTypeCodes---:"+this.byLicenseTypeCodes);
 //        this.mapCatalogIds = this.readConfig2Map(this.byCatalogIds);
 //        this.mapLicenseTypeCodes = this.readConfig2Map(this.byLicenseTypeCodes);
 //        List<FieldConvert> fieldConvertList = null;
@@ -1513,7 +1515,7 @@ public class CertShareApiServiceImpl implements CertShareApiService {
     }
 
     public Map dzzzMap2ProvinceMap(License license, Integer flag, Map<String, String> provinceMap) {
-        logger.info("flag:"+flag+"----请求参数license："+license.toString()+"----------------provinceMap" +provinceMap.toString());
+        logger.info("flag:"+flag+"----请求参数license："+license.toString()+"----------------");
         Map retMap = new HashMap();
 //        List<FieldConvert> fieldConvertList = null;
 //        if (this.mapCatalogIds != null && this.mapCatalogIds.containsKey(license.getCatalogId())) {
