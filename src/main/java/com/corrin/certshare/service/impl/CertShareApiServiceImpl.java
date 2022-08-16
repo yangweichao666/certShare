@@ -902,6 +902,10 @@ public class CertShareApiServiceImpl implements CertShareApiService {
                                     License license = (License)list.get(0);
                                     if (license != null) {
                                         Map<String, String> map = new HashMap();
+                                        List<NewAddCol> newAddCol = license.getNewAddCol();
+                                        newAddCol.forEach(dataMap->{
+                                            map.put(dataMap.gettKey().toLowerCase(),dataMap.gettValue())
+                                            ;});
                                         if (this.certIdentifier.equals("1")) {
                                             map.put("cert_identifier", license.getFileNumber());
                                         } else if (this.certIdentifier.equals("0")) {
@@ -915,6 +919,7 @@ public class CertShareApiServiceImpl implements CertShareApiService {
                                         mapList.add(map);
                                         queryCertInfoDataRes.setCertData(mapList);
                                         queryCertInfoRes.setHead(responseHead);
+                                        logger.info("+++返回queryCertInfoDataRes:"+queryCertInfoDataRes.toString());
                                         queryCertInfoRes.setData(this.encrypt(request, queryCertInfoDataRes));
                                         return queryCertInfoRes;
                                     } else {
@@ -927,6 +932,8 @@ public class CertShareApiServiceImpl implements CertShareApiService {
                                         License license = (License)list.get(i);
                                         if (license != null) {
                                             Map<String, String> map = new HashMap();
+                                            List<NewAddCol> newAddCol = license.getNewAddCol();
+                                            newAddCol.forEach(dataMap->{map.put(dataMap.gettKey().toLowerCase(),dataMap.gettValue());});
                                             if (this.certIdentifier.equals("1")) {
                                                 map.put("cert_identifier", license.getFileNumber());
                                             } else if (this.certIdentifier.equals("0")) {
@@ -943,6 +950,7 @@ public class CertShareApiServiceImpl implements CertShareApiService {
                                     if (mapList != null && mapList.size() != 0) {
                                         queryCertInfoDataRes.setCertData(mapList);
                                         queryCertInfoRes.setHead(responseHead);
+                                        logger.info("+++返回queryCertInfoDataRes:"+queryCertInfoDataRes.toString());
                                         queryCertInfoRes.setData(this.encrypt(request, queryCertInfoDataRes));
                                         return queryCertInfoRes;
                                     } else {
